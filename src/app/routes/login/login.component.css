@@ -1,0 +1,130 @@
+.main {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: url('../../../assets/images/l_b.jpg') center top;
+}
+
+.login-form {
+    width: 380px;
+    height: 430px;
+    margin: 196px auto 0;
+    font-size: 14px;
+}
+
+.title {
+    margin-bottom: 60px;
+    color: #3291ff;
+    text-align: center;
+    font-size: 30px;
+}
+
+.input-group {
+    margin-bottom: 24px;
+    border: 1px solid #d7d7d7;
+    border-radius: 2px;
+    background-color: #fff;
+}
+
+.input-group input {
+    width: 100%;
+    border: none;
+    padding: 1pc 20px;
+}
+
+.btn-login {
+    display: block;
+    width: 100%;
+    height: 56px;
+    border: none;
+    background-color: #3291ff;
+    color: #fff;
+    font-size: 18px;
+    line-height: 56px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.verrify-img {
+    height: 38px;
+    margin: 9px 20px;
+}
+
+@-webkit-keyframes spin {
+    0% {
+        transform: rotate(0)
+    }
+    100% {
+        transform: rotate(360deg)
+    }
+}
+
+@-moz-keyframes spin {
+    0% {
+        -moz-transform: rotate(0)
+    }
+    100% {
+        -moz-transform: rotate(360deg)
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0)
+    }
+    100% {
+        transform: rotate(360deg)
+    }
+}
+
+.spinner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1003;
+    background: rgba(0, 0, 0, 0.2);
+    overflow: hidden
+}
+
+.spinner div:first-child {
+    display: block;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    width: 150px;
+    height: 150px;
+    margin: -75px 0 0 -75px;
+    border-radius: 50%;
+    box-shadow: 0 3px 3px 0 rgba(255, 56, 106, 1);
+    transform: translate3d(0, 0, 0);
+    animation: spin 2s linear infinite
+}
+
+.spinner div:first-child:after, .spinner div:first-child:before {
+    content: '';
+    position: absolute;
+    border-radius: 50%
+}
+
+.spinner div:first-child:before {
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    box-shadow: 0 3px 3px 0 rgb(255, 228, 32);
+    -webkit-animation: spin 3s linear infinite;
+    animation: spin 3s linear infinite
+}
+
+.spinner div:first-child:after {
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+    box-shadow: 0 3px 3px 0 rgba(61, 175, 255, 1);
+    animation: spin 1.5s linear infinite
+}

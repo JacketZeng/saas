@@ -1,0 +1,36 @@
+<div class="main">
+  <form class="login-form" (ngSubmit)="login()">
+    <div class="title">SaaS平台登录</div>
+    <div class="input-group" placement="right">
+      <input type="text" placeholder="手机 / 邮箱" [(ngModel)]="params.account" name="account">
+    </div>
+    <div class="input-group">
+      <input type="password" placeholder="登录密码" [(ngModel)]="params.password" name="password">
+    </div>
+    <div class="input-group" nz-row>
+      <input type="text" [(ngModel)]="params.verrifyCode" name="verrifyCode" placeholder="图形验证码" nz-col nzSpan="12">
+      <div nz-col nzSpan="12">
+        <img class="verrify-img" src="{{params.verrifyImgUrl}}" (click)="changeVerrifyImg()" alt="验证码" />
+      </div>
+    </div>
+    <div class="nz-row justify-content-between">
+      <div class="form-check">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+        <label class="form-check-label" for="exampleCheck1">记住账号</label>
+      </div>
+      <div>
+        忘记密码？<a href="#">找回密码</a>
+      </div>
+    </div>
+    <button type="submit" class="btn-login">登录</button>
+  </form>
+</div>
+
+<div id="nb-global-spinner" class="spinner" *ngIf="loading">
+  <div class="blob blob-0"></div>
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+  <div class="blob blob-4"></div>
+  <div class="blob blob-5"></div>
+</div>
