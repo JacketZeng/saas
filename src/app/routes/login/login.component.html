@@ -7,9 +7,9 @@
     <div class="input-group">
       <input type="password" placeholder="登录密码" [(ngModel)]="params.password" name="password">
     </div>
-    <div class="input-group" nz-row>
-      <input type="text" [(ngModel)]="params.verrifyCode" name="verrifyCode" placeholder="图形验证码" nz-col nzSpan="12">
-      <div nz-col nzSpan="12">
+    <div class="input-group" nzRow>
+      <input type="text" [(ngModel)]="params.verrifyCode" name="verrifyCode" placeholder="图形验证码" nzCol nzSpan="12">
+      <div nzCol nzSpan="12">
         <img class="verrify-img" src="{{params.verrifyImgUrl}}" (click)="changeVerrifyImg()" alt="验证码" />
       </div>
     </div>

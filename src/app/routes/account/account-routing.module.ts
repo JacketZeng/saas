@@ -9,18 +9,24 @@ const routes: Routes = [
     {
         path: '',
         component: AccountComponent,
-        // canActivate: [AuthGuard],
+        canActivate: [AuthGuard],
         children: [
             {
                 path: '',
-                // canActivateChild: [AuthGuard],
+                canActivateChild: [AuthGuard],
                 children: [
                     {
-                        path: 'info',
+                        path: 'baseinfo',
                         component: InfoComponent
                     },
                     {
                         path: 'password',
+                        component: PasswordComponent
+                    },{
+                        path: 'notice',
+                        component: PasswordComponent
+                    },{
+                        path: 'blackList',
                         component: PasswordComponent
                     },
                 ]

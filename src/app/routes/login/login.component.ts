@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
       this.loading = true;
       this.authService.login().subscribe(() => {
         if (this.authService.isLoggedIn) {
-          let redirect = this.authService.redirectUrl ? this.authService.redirectUrl : 'account/info';
+          let redirect = this.authService.redirectUrl ? this.authService.redirectUrl : 'accountmanage/baseinfo';
           this.router.navigate([redirect]);
           this.loading = false;
         }

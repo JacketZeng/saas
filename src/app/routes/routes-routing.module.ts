@@ -10,9 +10,9 @@ const routes: Routes = [
     {
         path: '',
         component: IndexComponent,
-        // canActivate: [AuthGuard],
+        canActivate: [AuthGuard],
         children: [
-            { path: 'account', loadChildren: './account/account.module#AccountModule' }
+            { path: 'accountmanage', loadChildren: './account/account.module#AccountModule' }
         ]
     },
     {
