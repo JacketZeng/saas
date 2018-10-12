@@ -1,0 +1,8 @@
+{
+    "/saas/service": {
+        "target": "http://10.187.134.103:80",
+        "secure": false,
+        "logLevel": "debug",
+        "changeOrigin": true
+    }
+}

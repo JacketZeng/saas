@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { tap, delay } from 'rxjs/operators';
 import {Router} from '@angular/router';
-import { HttpService } from './http.service';
+import { HttpService } from '../net/http.service';
 import { LoginParams } from '../../routes/login/login-params';
 import { Urls } from '../../../assets/configs/urls';
 import { UtilService } from './util.service';
@@ -24,8 +24,6 @@ export class AuthService {
       tap(val => this.isLoggedIn = true)
     );
   }
-
-//   this.http.get('');
 
   logout(): void {
     this.isLoggedIn = false;

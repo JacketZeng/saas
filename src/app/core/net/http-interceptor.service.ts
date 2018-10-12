@@ -1,21 +1,19 @@
 import { HttpInterceptor, HttpRequest, HttpHandler, HttpHeaderResponse, HttpErrorResponse, HttpResponse } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { mergeMap, catchError } from 'rxjs/operators';
-import { AuthGuard } from './auth-guard.service';
-import { AuthService } from './auth.service';
 
 export class MyInterceptor implements HttpInterceptor {
-    constructor() { }
+    constructor() {}
 
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<
         | HttpHeaderResponse
         | HttpResponse<any>
         > {
-        console.log(request);
         let req = request.clone();
+        console.log('===============request:' + req.url);
         return next.handle(req).pipe(mergeMap((event: any) => {
             // 正常返回，处理具体返回参数
-            if (event instanceof HttpResponse && event.status === 200)
+            if (event instanceof HttpResponse)
                 return this.handleData(event);//具体处理请求返回数据
             return of(event);
         }),
@@ -26,9 +24,15 @@ export class MyInterceptor implements HttpInterceptor {
         event: HttpResponse<any> | HttpErrorResponse,
     ): Observable<any> {
         // 业务处理：一些通用操作
-
-        console.log(event.headers);
-
+        var headers = event.headers;
+        var accessState = headers["access-state"];
+        if (accessState && accessState == "unlogin") {
+            console.log('unlogin');
+        } else if (accessState && accessState == "unauthorized") {
+            console.log('unauthorized');
+        }
+        console.log('===============response:'+event.status);
+        console.log(event);
         switch (event.status) {
             case 200:
                 if (event instanceof HttpResponse) {

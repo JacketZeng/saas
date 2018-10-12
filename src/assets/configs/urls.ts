@@ -1,8 +1,10 @@
-import { environment } from "../../environments/environment";
+const serviceUrlPrefix = '/saas/service';
 //服务API地址
 export class Urls {
     //获取验证码
-    static VERRIFY_IMG_URL = 'http://'+environment.server.host + '/saas/service/publics/captcha'
-    //登录
-    static LOGIN_URL = 'http://'+environment.server.host + '/login'
+    static VERRIFY_IMG_URL = serviceUrlPrefix + '/publics/captcha';
+    //登录信息
+    static LOGIN_INFO_URL =  serviceUrlPrefix + '/home/loginInfo';
+    //获取菜单
+    static MENUS =  serviceUrlPrefix + '/home/menu';
 }

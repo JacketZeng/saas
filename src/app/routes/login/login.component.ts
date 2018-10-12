@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, NavigationExtras } from '@angular/router';
 import { LoginParams } from './login-params';
-import { AuthService } from '../../core/services/auth.service';
+import { AuthService } from '../../core/util/auth.service';
 
 
 @Component({
